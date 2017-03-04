@@ -21,7 +21,7 @@ clean:
 	rm -f $(PROGS) *.lo *~ *.d *.so
 
 trx_lms7002m.so: trx_lms7002m.cpp
-	@$(CXX) $(CFLAGS) $(CXXFLAGS) -fPIC -shared -o $@ $^ $(LIBS) -Wl,-z,defs
+	@$(CXX) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(LDFLAGS) -fPIC -shared -o $@ $^ $(LIBS) -Wl,-z,defs
 
 
 
