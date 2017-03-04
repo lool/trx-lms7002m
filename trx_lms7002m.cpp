@@ -204,7 +204,7 @@ static int trx_lms7002m_start(TRXState *s1, const TRXDriverParams *p)
 	    printf ("setup RX stream %d\n",ch);
 	    s->rx_stream[ch].channel = ch;
 	    s->rx_stream[ch].fifoSize = 128*1024;
-	    s->rx_stream[ch].throughputVsLatency = 0.1;
+	    s->rx_stream[ch].throughputVsLatency = 0.3;
 	    s->rx_stream[ch].dataFmt = lms_stream_t::LMS_FMT_F32;
 	    s->rx_stream[ch].isTx = false;
     	    LMS_SetupStream(s->device, &s->rx_stream[ch]);
@@ -216,7 +216,7 @@ static int trx_lms7002m_start(TRXState *s1, const TRXDriverParams *p)
 	    printf ("setup TX stream %d\n",ch);
 	    s->tx_stream[ch].channel = ch;
 	    s->tx_stream[ch].fifoSize = 128*1024;
-	    s->tx_stream[ch].throughputVsLatency = 0.1;
+	    s->tx_stream[ch].throughputVsLatency = 0.3;
 	    s->tx_stream[ch].dataFmt = lms_stream_t::LMS_FMT_F32;
 	    s->tx_stream[ch].isTx = true;
 	    LMS_SetupStream(s->device, &s->tx_stream[ch]);
